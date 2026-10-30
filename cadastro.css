@@ -1,5 +1,142 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #f3f4f6;
+    color: #292929;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: #cc092f;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 14%);
+}
+
+.menu-navegacao a {
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.menu-navegacao a:hover,
+.menu-navegacao a:focus-visible {
+    background: rgb(255 255 255 / 18%);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.conteudo-principal {
+    width: min(100% - 32px, 760px);
+    margin: 48px auto;
+    padding: 36px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 7%);
+    text-align: center;
+    animation: entrada-suave 450ms ease-out both;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.conteudo-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 11%);
+}
+
+.logo {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    object-fit: contain;
+}
+
+#formulario-cadastro {
+    display: grid;
+    gap: 14px;
+    width: min(100%, 440px);
+    margin: 0 auto;
+}
+
+#formulario-cadastro input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    background: #fff;
+    color: #292929;
+    font: inherit;
+}
+
+#formulario-cadastro input:focus {
+    border-color: #cc092f;
+    outline: 2px solid rgb(204 9 47 / 15%);
+}
+
+#formulario-cadastro button {
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #cc092f;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 160ms ease;
+}
+
+#formulario-cadastro button:hover {
+    background: #a90727;
+}
+
+@keyframes entrada-suave {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-navegacao {
+        gap: 0;
+        padding: 12px 8px;
+    }
+
+    .menu-navegacao a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .conteudo-principal {
+        margin: 28px auto;
+        padding: 28px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
